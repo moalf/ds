@@ -1,3 +1,3 @@
-module githu.com/moalf/ds
+module github.com/moalf/ds
 
 go 1.18

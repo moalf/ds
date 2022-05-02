@@ -1,53 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
 
-type Stack []int
+	"github.com/moalf/ds/stack"
+)
 
-func (s *Stack) IsEmpty() bool {
-	return len(*s) == 0
-}
-
-func (s *Stack) Push(elem int) {
-	*s = append(*s, elem)
-}
-
-func (s *Stack) Pop() (int, bool) {
-	if s.IsEmpty() {
-		return -1, false
-	} else {
-		index := len(*s) - 1
-		elem := (*s)[index]
-		*s = (*s)[:index]
-		return elem, true
-	}
-}
-
-func (s *Stack) Peek() int {
-	if !s.IsEmpty() {
-		return (*s)[len(*s)-1]
-	} else {
-		return -1
-	}
-}
+var s stack.Stack
 
 func main() {
-	var stack Stack
 
-	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
+	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
 
-	stack.Push(3)
-	stack.Push(10)
-	stack.Push(23)
-	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
-	fmt.Println(stack.Peek())
-	stack.Pop()
-	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
-	fmt.Println(stack.Peek())
-	stack.Pop()
-	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
-	fmt.Println(stack.Peek())
-	stack.Pop()
-	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
-	fmt.Println(stack.Peek())
+	s.Push(3)
+	s.Push(10)
+	s.Push(23)
+	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
+	fmt.Println(s.Peek())
+	s.Pop()
+	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
+	fmt.Println(s.Peek())
+	s.Pop()
+	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
+	fmt.Println(s.Peek())
+	s.Pop()
+	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
+	fmt.Println(s.Peek())
 }
