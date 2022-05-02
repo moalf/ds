@@ -1,0 +1,53 @@
+package main
+
+import "fmt"
+
+type Stack []int
+
+func (s *Stack) IsEmpty() bool {
+	return len(*s) == 0
+}
+
+func (s *Stack) Push(elem int) {
+	*s = append(*s, elem)
+}
+
+func (s *Stack) Pop() (int, bool) {
+	if s.IsEmpty() {
+		return -1, false
+	} else {
+		index := len(*s) - 1
+		elem := (*s)[index]
+		*s = (*s)[:index]
+		return elem, true
+	}
+}
+
+func (s *Stack) Peek() int {
+	if !s.IsEmpty() {
+		return (*s)[len(*s)-1]
+	} else {
+		return -1
+	}
+}
+
+func main() {
+	var stack Stack
+
+	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
+
+	stack.Push(3)
+	stack.Push(10)
+	stack.Push(23)
+	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
+	fmt.Println(stack.Peek())
+	stack.Pop()
+	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
+	fmt.Println(stack.Peek())
+	stack.Pop()
+	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
+	fmt.Println(stack.Peek())
+	stack.Pop()
+	fmt.Printf("Empty? %v;  Stack: %v\n", stack.IsEmpty(), stack)
+	fmt.Println(stack.Peek())
+}
