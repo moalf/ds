@@ -12,6 +12,7 @@ var q queue.Queue
 
 func main() {
 
+	fmt.Println("Stack ***")
 	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
 
 	s.Push(3)
@@ -29,6 +30,7 @@ func main() {
 	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
 	fmt.Println(s.Peek())
 
+	fmt.Println("Queue ***")
 	fmt.Printf("Empty? %v; Queue: %v\n", q.IsEmpty(), q)
 	q.Enqueue(10)
 	fmt.Printf("Empty? %v; Queue: %v\n", q.IsEmpty(), q)
