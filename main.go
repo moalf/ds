@@ -11,6 +11,7 @@ var s stack.Stack
 var q queue.Queue
 
 func main() {
+	fmt.Println("DS Demo")
 
 	fmt.Println("Stack ***")
 	fmt.Printf("Empty? %v;  Stack: %v\n", s.IsEmpty(), s)
