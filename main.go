@@ -56,4 +56,5 @@ func main() {
 	fmt.Printf("Empty? %v; Queue: %v\n", q.IsEmpty(), q)
 
 	fmt.Println("Done1")
+	fmt.Println("Done2")
 }
