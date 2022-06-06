@@ -55,4 +55,5 @@ func main() {
 	q.Dequeue()
 	fmt.Printf("Empty? %v; Queue: %v\n", q.IsEmpty(), q)
 
+	fmt.Println("Done1")
 }
